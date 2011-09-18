@@ -1,15 +1,19 @@
 package controllers;
 
+import com.google.common.collect.Ordering;
+import org.hibernate.sql.ordering.antlr.OrderingSpecification;
 import play.mvc.*;
 
 
 import models.*;
 
+import java.util.Comparator;
 import java.util.List;
 
 
 /**
  * Play! Framework sample application I wrote for fun, cause fun is important.
+ *
  * @author Nicolas Martignole
  */
 public class Application extends Controller {
@@ -26,7 +30,8 @@ public class Application extends Controller {
 
     /**
      * This actions gets called by Ajax, when the user selects a Cat.
-     * @param id is the Cat's id.
+     *
+     * @param id      is the Cat's id.
      * @param panelId is the panel to refresh.
      */
     public static void pickACat(Long id, Long panelId) {
@@ -43,7 +48,16 @@ public class Application extends Controller {
 
 
     public static void stats() {
-        List<Cat> cats=Cat.findAll();
+        Comparator<Cat> byPicked = new Comparator<Cat>() {
+            public int compare(Cat cat1, Cat cat2) {
+                return cat1.picked.compareTo(cat2.picked);
+            }
+        };
+
+        List<Cat> originalList=Cat.findAll();
+        // Use Google Guava to create a new list, ordered from the most popular Cat to the less one
+        List<Cat> cats = Ordering.from(byPicked).reverse().sortedCopy(originalList);
+
         render(cats);
     }
 }

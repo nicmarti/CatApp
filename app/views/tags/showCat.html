@@ -1,4 +1,16 @@
-<h2><img src="/public/images/ff-blue.png"/> <span>${_cat.picked} fans</span></h2>
+<h2><img src="/public/images/ff-blue.png"/>
+
+#{if _cat.picked==0}
+    <span>No fan, please pick me!</span>
+#{/if}
+#{if _cat.picked==1}
+    <span>Only one vote so far</span>
+#{/if}
+#{if _cat.picked>1}
+    <span>${_cat.picked} fans</span>
+#{/if}
+
+</h2>
 
 <a class="catlink" href="@{Application.pickACat(_cat.id,_panelId)}"><img src="${_cat.url}" alt="Cat ${_cat.id}"/></a>
 <br/>

@@ -4,8 +4,16 @@
 
 <h2><img src="/public/images/icons/fire-blue.png"> <span>Some stats</span></h2>
 
-<ul>
     #{list items:cats, as:'cat'}
-    <li><img src="${cat.url}" alt="Cat picked"/>${cat.picked}</li>
+    #{if cat.picked>1}
+        <h2>${cat.picked} votes for:</h2>
+    #{/if}
+    #{if cat.picked==1}
+        <h2>Only one vote for:</h2>
+    #{/if}
+
+    #{if cat.picked==0}
+        <h2>No vote so far for this cat:</h2>
+    #{/if}
+        <img src="${cat.url}" alt="Cat picked"/><h2></li>
     #{/list}
-</ul>
