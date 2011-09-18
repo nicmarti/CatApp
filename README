@@ -1,0 +1,16 @@
+CatApp is a simple Play! Framework application to demonstrate some of the most simple feature
+of the Play! Framework. I wrote this application in a train, somewhere between the souht-west
+of France and Paris. This was after the JUG Summer Camp conference. David Gageot did a great
+presentation of a simple approach to write a Web application in less than 35 minuts.
+His subject was exactly the same idea I took : pick 2 cats pictures, select wich one is hot, that's it!
+Remember the "Social Network" movie ? Where Mark Z. from Facebook wrote this in PHP in one night ?
+Basically, we have the same kind of applicaiton. With no Internet connection in the train I couldn't
+get student's pictures. So you have baby cat. Sorry dude.
+
+Nicolas Martignole
+17 septembre 2011
+
+Pour les Francophone : CatApp c'est "T'es cap ?".
+Est-ce que tu es cap' de coder une application en moins de 3 heures ? Un truc tout simple ?
+Je vous conseille la conférence du JUG Summer Camp à la Rochelle dans le sud-ouest de la France.
+Très bon souvenir.
