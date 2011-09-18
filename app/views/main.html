@@ -18,11 +18,11 @@
         <h1 id="logo"><a href="/">CatApp</a></h1>
         <ul id="menu">
 
-            <li class="selected">
+            <li class="#{if request.actionMethod=='index'}selected#{/if}">
                 <a href="/">Cat's home</a><span>&gt;</span>
             </li>
 
-             <li>
+             <li class="#{if request.actionMethod=='stats'}selected#{/if}">
                 <a href="@{stats()}">Stats</a>
             </li>
             <li>
