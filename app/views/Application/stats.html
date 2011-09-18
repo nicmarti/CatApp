@@ -1,10 +1,11 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-    <title></title>
-</head>
-<body>
+#{extends 'main.html' /}
+#{set title:'Stats' /}
 
-</body>
-</html>
+
+<h2><img src="/public/images/icons/fire-blue.png"> <span>Some stats</span></h2>
+
+<ul>
+    #{list items:cats, as:'cat'}
+    <li><img src="${cat.url}" alt="Cat picked"/>${cat.picked}</li>
+    #{/list}
+</ul>
