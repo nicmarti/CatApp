@@ -1,0 +1,15 @@
+Cat(c0):
+    url: /public/images/cat01.jpg
+    picked: 0
+
+Cat(c1):
+    url: /public/images/cat02.jpg
+    picked: 0
+
+Cat(c2):
+    url: /public/images/cat03.jpg
+    picked: 0
+
+Cat(c3):
+    url: /public/images/cat04.jpg
+    picked: 0

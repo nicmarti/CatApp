@@ -1,0 +1,21 @@
+#{extends 'main.html' /}
+#{set title:'2 Kittens' /}
+
+
+<h2><img src="/public/images/icons/fire-blue.png"> <span>Pick a cat</span></h2>
+
+<div class="slide">
+    <div class="explain">
+        <div id="p_1">
+            #{showCat panelId:1, cat:cat1/}
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="explain">
+        <div id="p_2">
+            #{showCat panelId:2, cat:cat2/}
+        </div>
+    </div>
+</div>

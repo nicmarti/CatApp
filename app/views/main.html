@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>#{get 'title' /}</title>
+    <meta charset="${_response_encoding}">
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+    #{get 'moreStyles' /}
+    <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+    <script src="@{'/public/javascripts/jquery-1.5.2.min.js'}" type="text/javascript"
+            charset="${_response_encoding}"></script>
+    #{get 'moreScripts' /}
+</head>
+<body class="scala">
+
+<div id="header">
+    <div class="wrapper">
+        <h1 id="logo"><a href="/">CatApp</a></h1>
+        <ul id="menu">
+
+            <li class="selected">
+                <a href="/">Cat's home</a><span>&gt;</span>
+            </li>
+
+             <li>
+                <a href="@{stats()}">Stats</a>
+            </li>
+            <li>
+                <a href="/public/about.html">About this demo</a>
+            </li>
+            <li>
+                <a href="http://www.playframework.org">Playframework.org</a><span>&gt;</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="wrapper">
+  #{doLayout /}
+</div>
+
+<div id="footer">
+<em>Quick and stupid demo for Play! Framework to demonstrate some nice simple jQuery features. High-five to @dgageot for this idea.</em>
+</div>
+</body>
+</html>

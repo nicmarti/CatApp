@@ -1,0 +1,37 @@
+<h2><img src="/public/images/ff-blue.png"/> <span>${_cat.picked} fans</span></h2>
+
+<a class="catlink" href="@{Application.pickACat(_cat.id,_panelId)}"><img src="${_cat.url}" alt="Cat ${_cat.id}"/></a>
+<br/>
+<em>Cat #${_cat.id}</em>
+
+<script>
+    // At load time slideItDown
+    $('#p_${_panelId}').fadeIn('fast', function() {
+        // Animation complete.
+    });
+
+
+    $('#p_${_panelId} .catlink').click(function(e) {
+        // Disable the default action, the a href action
+        e.preventDefault();
+
+        // With jQuery, hide the panel
+        $('#p_${_panelId}').fadeOut('fast', function() {
+            // Animation complete.
+        });
+
+        // Ajax callback to pick the selected cat
+        $.ajax({
+            url: '@{pickACat(_cat.id,_panelId)}',
+            dataType: 'html',
+            type: 'POST',
+            success: function(res, v) {
+                $('#p_${_panelId}').html(res)
+            },
+            error: function(res, v) {
+                $('#p_${_panelId}').html("<h3>Error</h3>" + res.responseText)
+            }
+        });
+
+    });
+</script>
