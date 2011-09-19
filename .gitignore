@@ -2,3 +2,5 @@
 /tmp/
 /catapp.iml
 /lib/
+/logs/
+/server.pid
